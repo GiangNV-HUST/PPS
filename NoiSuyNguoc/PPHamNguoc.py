@@ -43,6 +43,7 @@ def KhoangDonDieu(Y):
     return khoangDonDieu
 
 def HamNguoc(Y):
+    print("Hello World")
     pass
 
 
