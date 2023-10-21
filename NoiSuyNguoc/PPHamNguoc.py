@@ -31,9 +31,10 @@ def KhoangDonDieuY(Y):
             temp = SaiPhanCap1[i]
             index.append(i)
     index.append(len(SaiPhanCap1))
+    khoangDonDieuY = []
     doDaiMax = index[1] - index[0]
     for i in range(len(index)-1):
-        if (doDaiMax < (index[i+1] - index[i])):
+        if (doDaiMax <= (index[i+1] - index[i])):
             doDaiMax = index[i+1] - index[i]
             for j in range(index[i], index[i+1]+1):
                 khoangDonDieuY.append(Y[j])
@@ -114,10 +115,11 @@ if __name__ == "__main__":
     # heSoNiuTon = NiuTon_Tien.HESONIUTON(KhoangDonDieuY(Y),)
     # print(SAIPHANCAP1(Y))
     khoangDonDieuY = KhoangDonDieuY(Y)
+    print(khoangDonDieuY)
     khoangDonDieuX = KhoangDonDieuX(X, Y)
     hESONIUTON = HESONIUTON(khoangDonDieuY, khoangDonDieuX)
     heSoDaThuc = HESODATHUC(khoangDonDieuY, hESONIUTON)
     print(heSoDaThuc)
-    print(GIATRIHAMSOTAIX(heSoDaThuc, 2.5))
+    print(GIATRIHAMSOTAIX(heSoDaThuc, 3.15))
     # print(KhoangLiNghiem(4,Y))
     # print(HamNguoc(Y))
