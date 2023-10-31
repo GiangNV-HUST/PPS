@@ -12,14 +12,6 @@ def SAIPHANCAP1(Y):
     return SaiPhanCap1
 
 
-def KhoangLiNghiem(yNgang, Y):
-    khoangLiNghiem = []
-    for i in range(len(Y)-1):
-        if ((Y[i] - yNgang)*(Y[i+1]-yNgang) < 0):
-            khoangLiNghiem.append((Y[i], Y[i+1]))
-    return khoangLiNghiem
-
-
 def KhoangDonDieuY(Y):
     SaiPhanCap1 = SAIPHANCAP1(Y)
     khoangDonDieuY = []
