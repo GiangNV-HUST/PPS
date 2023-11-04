@@ -1,6 +1,4 @@
 import numpy as np
-import sys
-sys.path.insert(0, r"C:\Users\Giang\Desktop\PPS\Hoocner")
 from Hoocner import Hoocner
 
 
@@ -65,7 +63,7 @@ if __name__ == "__main__":
             Y.append(float(data[1]))
 
     TiSaiPhanCapN = TISAIPHANCAPN(X, Y)
-    # Bảng tỉ sai phân có các hàng tương ứng với các cấp
+    # Bảng tỉ sai phân có các hàng tương ứng với6 các cấp
     print("Bảng tỉ sai phân cấp n của đa thức:\n", TiSaiPhanCapN)
 
     HeSoNiuTon = HESONIUTON(X, Y)

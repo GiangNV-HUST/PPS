@@ -1,7 +1,5 @@
 import math
 import numpy as np
-import sys
-sys.path.insert(0, r"C:\Users\Giang\Desktop\PPS\Hoocner")
 from Hoocner import Hoocner
 
 

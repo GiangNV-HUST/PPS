@@ -1,8 +1,6 @@
 import math
 from Hoocner import Hoocner
 import numpy as np
-import sys
-sys.path.insert(0, r"C:\Users\Giang\Desktop\PPS\Hoocner")
 
 
 def SAIPHANCAP1(Y):
