@@ -17,7 +17,7 @@ def BangNoiSuy(f, a, b, n):
 
 def TinhHi(t):
     HeSoW = [i for i in range(n)]
-    Hoocner.TinhWx()
+    print(Hoocner.TinhWx(HeSoW))
 
 def TinhI(X,Y):
     pass

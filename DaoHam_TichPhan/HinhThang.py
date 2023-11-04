@@ -1,6 +1,5 @@
 import numpy
 import sympy
-import Lagrange
 
 x = sympy.symbols("x")
 
