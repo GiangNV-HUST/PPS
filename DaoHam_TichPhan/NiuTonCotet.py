@@ -30,7 +30,7 @@ def HeSoCoTet(m):
     return heSoCoTet
 
 
-def TinhI(X, Y,m):
+def TinhI(X, Y, m):
     N = int((len(X)-1)/m)
     I = 0
     Hi = HeSoCoTet(m)
@@ -41,7 +41,6 @@ def TinhI(X, Y,m):
     return I
 
 
-
 if __name__ == "__main__":
     print("SỬ DỤNG PHƯƠNG PHÁP SIMSON TÍNH GẦN ĐÚNG TÍCH PHÂN!")
     X = []
@@ -49,10 +48,10 @@ if __name__ == "__main__":
     # n là số đoạn của bảng sai phân hay độ dài tập X-1
     n = 10
     # m là hệ số cotet
-    m = 10
-    f = 1/(1+x)
-    a = 0
-    b = 1
+    m = 2
+    f = (3.5*x**2 + 0.1*x - 2.8)/(x-0.4)
+    a = 2.2
+    b = 3.4
     print(f"Tích phân của hàm f= {f} trên đoạn [{a},{b}] là")
     bangNoiSuy = BangNoiSuy(f, a, b, n)
     print(f"Bảng nội suy tương ứng với n = {n} là:")
@@ -63,4 +62,4 @@ if __name__ == "__main__":
 
     # print("Giá trị của I là:", TinhI(X, Y))
     print(HeSoCoTet(m))
-    print(TinhI(X,Y,m))
+    print(TinhI(X, Y, m))
