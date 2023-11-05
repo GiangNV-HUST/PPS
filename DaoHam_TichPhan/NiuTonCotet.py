@@ -1,6 +1,6 @@
 import numpy
 import sympy
-import Hoocner
+from Hoocner import Hoocner
 
 x = sympy.symbols("x")
 
@@ -15,18 +15,41 @@ def BangNoiSuy(f, a, b, n):
         bangNoiSuy[i][1] = f.subs(x, bangNoiSuy[i][0])
     return bangNoiSuy
 
-def TinhHi(t):
-    HeSoW = [i for i in range(n)]
-    print(Hoocner.TinhWx(HeSoW))
 
-def TinhI(X,Y):
-    pass
+def HeSoCoTet(m):
+    HeSoW = [i for i in range(m+1)]
+    HeSoT = Hoocner.TinhWx(HeSoW)
+    heSoCoTet = []
+    for i in range(m+1):
+        _kq = 0
+        T_tru_j = numpy.array(Hoocner.ChiaDaThucChoXTruCKhongCoDu(HeSoT, i))
+        Hi = T_tru_j/Hoocner.GiaTriCuaDaThucTaiC(T_tru_j, i)
+        for j in range(len(Hi)):
+            _kq += Hi[j]*(len(Hi)-1)**(len(Hi)-j)/(len(Hi)-j)
+        heSoCoTet.append(_kq)
+    return heSoCoTet
+
+
+def TinhI(X, Y,m):
+    N = int((len(X)-1)/m)
+    I = 0
+    Hi = HeSoCoTet(m)
+    h = X[1] - X[0]
+    for i in range(N):
+        for j in range(m+1):
+            I += h*(Y[m*i+j])*Hi[j]
+    return I
+
+
 
 if __name__ == "__main__":
     print("SỬ DỤNG PHƯƠNG PHÁP SIMSON TÍNH GẦN ĐÚNG TÍCH PHÂN!")
     X = []
     Y = []
+    # n là số đoạn của bảng sai phân hay độ dài tập X-1
     n = 10
+    # m là hệ số cotet
+    m = 10
     f = 1/(1+x)
     a = 0
     b = 1
@@ -39,4 +62,5 @@ if __name__ == "__main__":
         Y.append(bangNoiSuy[i][1])
 
     # print("Giá trị của I là:", TinhI(X, Y))
-    TinhHi(2)
+    print(HeSoCoTet(m))
+    print(TinhI(X,Y,m))

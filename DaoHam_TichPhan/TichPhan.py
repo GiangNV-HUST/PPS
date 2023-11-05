@@ -1,5 +1,5 @@
-import DaoHam_TichPhan.DaoHam.modules.Lagrange1 as Lagrange1
-import DaoHam_TichPhan.DaoHam.modules.Lagrange2 as Lagrange2
+import Lagrange1
+import  Lagrange2
 
 def TinhA_i(HeSoW,x_i,a,b):
     Li = Lagrange1.TinhLj(HeSoW,x_i)
