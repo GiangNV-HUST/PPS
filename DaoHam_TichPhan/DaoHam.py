@@ -1,6 +1,6 @@
-import DaoHam_TichPhan.DaoHam.modules.Lagrange1 as Lagrange1
+import Lagrange1
 import Hoocner
-import DaoHam_TichPhan.DaoHam.modules.Lagrange2 as Lagrange2
+import Lagrange2
 import numpy
 import math
 from Hoocner import Hoocner
