@@ -13,5 +13,5 @@ if __name__ == "__main__":
             Y.append(float(data[1]))
 
     print(Lg1.TinhPn(X, X, Y))
-    # print(Lg2.TinhPn(X,X,Y))
-    # print(Lg1.TinhLj(X,X[0])) 
+    # TODO print(Lg2.TinhPn(X,X,Y))
+    # @print(Lg1.TinhLj(X,X[0])) 

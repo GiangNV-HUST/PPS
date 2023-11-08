@@ -9,7 +9,8 @@ class MocNoiSuy:
 
 
     if __name__ == "__main__":
-        a = 4
-        b = 7
-        n = 10
+        a = 1
+        b = 5
+        n = 8
+        print("Các mốc nội suy tối ưu trên [a,b] là: ")
         print(MocNoiSuy(a, b, n))

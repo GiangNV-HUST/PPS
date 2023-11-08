@@ -46,9 +46,9 @@ if __name__ == "__main__":
     X = []
     Y = []
     # n là số đoạn của bảng sai phân hay độ dài tập X-1
-    n = 10
+    n = 12
     # m là hệ số cotet
-    m = 2
+    m = 6
     f = (3.5*x**2 + 0.1*x - 2.8)/(x-0.4)
     a = 2.2
     b = 3.4
