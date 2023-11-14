@@ -76,7 +76,7 @@ if __name__ == "__main__":
     print("Hệ số đa thức Niuton mốc cách đều:\n", HeSoDaThuc)
 
 
-    x = 3.15
+    x = 4.27
     t = (x-X[0])/(X[1]-X[0])
     GiaTriHamSo =GIATRIHAMSO(t, Y)
     print("Giá trị biểu thức tại:\n", GiaTriHamSo)

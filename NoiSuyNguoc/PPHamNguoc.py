@@ -96,7 +96,7 @@ def GIATRIHAMSOTAIX(HeSoDaThuc, x):
 if __name__ == "__main__":
     X = []
     Y = []
-    with open(r"C:\Users\Giang\Desktop\PPS\NiuTon_MocBatKy\input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         for line in file:
             data = line.strip().split()
             X.append(float(data[0]))
@@ -104,12 +104,20 @@ if __name__ == "__main__":
 
     # heSoNiuTon = NiuTon_Tien.HESONIUTON(KhoangDonDieuY(Y),)
     # print(SAIPHANCAP1(Y))
+    print("Khoảng đơn điệu của Y là:")
     khoangDonDieuY = KhoangDonDieuY(Y)
     print(khoangDonDieuY)
     khoangDonDieuX = KhoangDonDieuX(X, Y)
+    print("Bảng tỉ sai phân cấp n là: ")
+    tisaiphan = TISAIPHANCAPN(Y,X)
+    print(tisaiphan)
+    print("Hệ số NiuTon là: ")
     hESONIUTON = HESONIUTON(khoangDonDieuY, khoangDonDieuX)
+    print(hESONIUTON)
+    print("Hệ số đa thức là: ")
     heSoDaThuc = HESODATHUC(khoangDonDieuY, hESONIUTON)
     print(heSoDaThuc)
-    print(GIATRIHAMSOTAIX(heSoDaThuc, 3.15))
+    print("giá trị của xNgang là: ")
+    print(GIATRIHAMSOTAIX(heSoDaThuc, 25314))
     # print(KhoangLiNghiem(4,Y))
     # print(HamNguoc(Y))

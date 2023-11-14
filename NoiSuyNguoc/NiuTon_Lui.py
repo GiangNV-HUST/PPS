@@ -32,11 +32,13 @@ def HESONIUTON(X, Y):
 
 
 def HESODATHUC(X, HeSoNiuTon):
-    n = len(X)
+    X.reverse()
     BangWx = np.zeros((len(X), len(X)))
+    n = len(X)
     BangWx[0, n-1] = HeSoNiuTon[0]
     HeSoDaThuc = np.zeros(len(X))
     for i in range(1, len(X)):
+        
         line = HeSoNiuTon[i]*np.array(Hoocner.TinhWx(X[0:i]))
         line = line[::-1]
         for j in range(len(X)-1, len(X) - len(line)-1, -1):
@@ -49,7 +51,9 @@ def HESODATHUC(X, HeSoNiuTon):
 def GIATRIHAMSOTAIX(HeSoDaThuc, x):
     GiaTriHam = 0
     for i in range(len(HeSoDaThuc)-1, -1, -1):
-        GiaTriHam += HeSoDaThuc[len(HeSoDaThuc)-1-i] * x**i
+        GiaTriHam += HeSoDaThuc[len(HeSoDaThuc)-1-i] * x**(i)
+        # print(i)
+        # print(len(HeSoDaThuc)-1-i)
     return GiaTriHam
 
 

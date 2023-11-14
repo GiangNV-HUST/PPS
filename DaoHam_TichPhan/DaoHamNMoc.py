@@ -1,4 +1,3 @@
-import math
 from Hoocner import Hoocner
 import numpy
 import sympy

@@ -1,3 +1,4 @@
+import math
 import numpy
 import sympy
 from Hoocner import Hoocner
@@ -14,6 +15,14 @@ def BangNoiSuy(f, a, b, n):
     for i in range(0, n+1):
         bangNoiSuy[i][1] = f.subs(x, bangNoiSuy[i][0])
     return bangNoiSuy
+
+def ChonMocDanhGiaSaiSo(X,Y,n):
+    MocNoiSuy = numpy.zeros()
+    
+    for i in range(round((len(X)+1)/n)):
+        XSaiSo.append(X[n*i])
+        YSaiSo.append(Y[n+i])
+    
 
 
 def HeSoCoTet(m):
@@ -41,25 +50,34 @@ def TinhI(X, Y, m):
     return I
 
 
+
 if __name__ == "__main__":
-    print("SỬ DỤNG PHƯƠNG PHÁP SIMSON TÍNH GẦN ĐÚNG TÍCH PHÂN!")
+    print("SỬ DỤNG PHƯƠNG PHÁP NiuTonCoTet TÍNH GẦN ĐÚNG TÍCH PHÂN!")
+    # X = []
+    # Y = []
+    # # n là số đoạn của bảng sai phân hay độ dài tập X-1
+    # n = 20
+    # # m là hệ số cotet
+    m = 5
+    # f = (3.5*x**2 + 0.1*x - 2.8)/(x-0.4)
+    # a = 2.2
+    # b = 3.4
+    # print(f"Tích phân của hàm f= {f} trên đoạn [{a},{b}] là")
+    # bangNoiSuy = BangNoiSuy(f, a, b, n)
+    # print(f"Bảng nội suy tương ứng với n = {n} là:")
+    # print(bangNoiSuy)
+    # for i in range(n+1):
+    #     X.append(bangNoiSuy[i][0])
+    #     Y.append(bangNoiSuy[i][1])
+    
     X = []
     Y = []
-    # n là số đoạn của bảng sai phân hay độ dài tập X-1
-    n = 12
-    # m là hệ số cotet
-    m = 6
-    f = (3.5*x**2 + 0.1*x - 2.8)/(x-0.4)
-    a = 2.2
-    b = 3.4
-    print(f"Tích phân của hàm f= {f} trên đoạn [{a},{b}] là")
-    bangNoiSuy = BangNoiSuy(f, a, b, n)
-    print(f"Bảng nội suy tương ứng với n = {n} là:")
-    print(bangNoiSuy)
-    for i in range(n+1):
-        X.append(bangNoiSuy[i][0])
-        Y.append(bangNoiSuy[i][1])
-
+    with open("input.txt", "r") as file:
+        for line in file:
+            data = line.strip().split()
+            X.append(float(data[0]))
+            Y.append(float(data[1]))
+    ChonMocDanhGiaSaiSo(X,Y,3)
     # print("Giá trị của I là:", TinhI(X, Y))
     print(HeSoCoTet(m))
     print(TinhI(X, Y, m))
