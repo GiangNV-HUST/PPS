@@ -1,9 +1,9 @@
-from NiuTon_Tien import NiuTon_Tien
+import NiuTon_Tien
 
 if __name__ == "__main__":
     X = []
     Y = []
-    with open(r"C:\Users\Giang\Desktop\PPS\NiuTon_MocBatKy\input.txt", "r") as file:
+    with open("inputTien.txt", "r") as file:
         for line in file:
             data = line.strip().split()
             X.append(float(data[0]))

@@ -3,7 +3,7 @@ import Hoocner
 import Lagrange2
 import numpy
 import math
-from Hoocner import Hoocner
+
 
 
 def TinhPn(X, Y):

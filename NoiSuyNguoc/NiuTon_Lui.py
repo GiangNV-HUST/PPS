@@ -1,5 +1,5 @@
 import numpy as np
-from Hoocner import Hoocner
+import Hoocner
 
 
 def TISAIPHANCAP1(X, Y):
@@ -60,7 +60,7 @@ def GIATRIHAMSOTAIX(HeSoDaThuc, x):
 if __name__ == "__main__":
     X = []
     Y = []
-    with open(r"C:\Users\Giang\Desktop\PPS\NiuTon_MocBatKy\input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         for line in file:
             data = line.strip().split()
             X.append(float(data[0]))

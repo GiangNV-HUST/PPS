@@ -1,4 +1,4 @@
-from Hoocner import Hoocner
+import Hoocner
 import math
 import numpy as np
 
@@ -57,18 +57,17 @@ def GiaTriDaThuc(Y, t):
 if __name__ == "__main__":
     X = []
     Y = []
-    with open(r"C:\Users\Giang\Desktop\PPS\NiuTon_MocBatKy\input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         for line in file:
             data = line.strip().split()
             X.append(float(data[0]))
             Y.append(float(data[1]))
 
-    x = 3.15
-    t = (x-X[0])/(X[1]-X[0])
+
     # Hệ số Gauss được lưu theo thứ tự tăng dần [y_0, delta y_-1, delta^2 y_-1, delta^3 y_-2, delta^4 y_2]
     print(HeSoGauss(Y))
 
     # Đa thức được in ra màn hình với dạng a_n-1*t^n-1 +a_n-2*t^n-2 +...+ a_1*t + a_0
     print(HESODATHUC(Y))
-    # print(GiaTriDaThuc(Y, 2))
+    print(GiaTriDaThuc(Y, 345))
     # print(heso)

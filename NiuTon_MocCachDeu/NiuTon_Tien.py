@@ -1,6 +1,6 @@
 import numpy as np
 import math
-from Hoocner import Hoocner
+import Hoocner
 
 
 def SAIPHANCAP1(Y):
@@ -40,7 +40,6 @@ def HESODATHUC(Y):
         line = Hoocner.TinhWx(X[0:i])
         for j in range(len(line)):
             HeSoWx[i, n+j-i-1] = line[j] / math.factorial(i) * HeSoSaiPhan[i]
-    print(HeSoWx)
     for line in HeSoWx:
         HeSoDaThuc += line
     return HeSoDaThuc
@@ -57,7 +56,7 @@ def GIATRIHAMSO(t, Y):
 if __name__ == "__main__":
     X = []
     Y = []
-    with open(r"C:\Users\Giang\Desktop\PPS\NiuTon_MocBatKy\input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         for line in file:
             data = line.strip().split()
             X.append(float(data[0]))
@@ -76,7 +75,7 @@ if __name__ == "__main__":
     print("Hệ số đa thức Niuton mốc cách đều:\n", HeSoDaThuc)
 
 
-    x = 4.27
+    x = 6.51
     t = (x-X[0])/(X[1]-X[0])
     GiaTriHamSo =GIATRIHAMSO(t, Y)
     print("Giá trị biểu thức tại:\n", GiaTriHamSo)

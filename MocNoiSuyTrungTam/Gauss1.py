@@ -1,5 +1,5 @@
 import math
-from Hoocner import Hoocner
+import Hoocner
 import numpy as np
 
 
@@ -57,7 +57,7 @@ def GiaTriDaThuc(Y, t):
 if __name__ == "__main__":
     X = []
     Y = []
-    with open(r"C:\Users\Giang\Desktop\PPS\NiuTon_MocBatKy\input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         for line in file:
             data = line.strip().split()
             X.append(float(data[0]))
@@ -66,5 +66,5 @@ if __name__ == "__main__":
     # print(SAIPHANCAPN(Y))
     print(HeSoGauss(Y))
     print(HESODATHUC(Y))
-    print(GiaTriDaThuc(Y, 2))
+    print(GiaTriDaThuc(Y, 345))
     # print(heso)

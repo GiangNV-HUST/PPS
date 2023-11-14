@@ -1,4 +1,4 @@
-from Hoocner import Hoocner
+import Hoocner
 import numpy as np
 HeSoW = []
 HeSoDaThuc = [2,3,0,-1,4]

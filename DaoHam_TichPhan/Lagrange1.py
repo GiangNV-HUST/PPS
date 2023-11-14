@@ -1,6 +1,6 @@
 
 
-from Hoocner import Hoocner
+import Hoocner
 import numpy as np
 
 

@@ -1,7 +1,6 @@
-import math
 import numpy
 import sympy
-from Hoocner import Hoocner
+import Hoocner
 
 x = sympy.symbols("x")
 
@@ -17,12 +16,12 @@ def BangNoiSuy(f, a, b, n):
     return bangNoiSuy
 
 def ChonMocDanhGiaSaiSo(X,Y,n):
-    MocNoiSuy = numpy.zeros()
+    MocNoiSuy = numpy.zeros((2,round((len(X)+1)/n)))
     
     for i in range(round((len(X)+1)/n)):
-        XSaiSo.append(X[n*i])
-        YSaiSo.append(Y[n+i])
-    
+        MocNoiSuy[0][i]= X[n*i]
+        MocNoiSuy[1][i]= Y[n*i]
+    return MocNoiSuy
 
 
 def HeSoCoTet(m):
@@ -57,8 +56,8 @@ if __name__ == "__main__":
     # Y = []
     # # n là số đoạn của bảng sai phân hay độ dài tập X-1
     # n = 20
-    # # m là hệ số cotet
-    m = 5
+    #! m là hệ số cotet
+    m = 2
     # f = (3.5*x**2 + 0.1*x - 2.8)/(x-0.4)
     # a = 2.2
     # b = 3.4
@@ -77,7 +76,18 @@ if __name__ == "__main__":
             data = line.strip().split()
             X.append(float(data[0]))
             Y.append(float(data[1]))
-    ChonMocDanhGiaSaiSo(X,Y,3)
-    # print("Giá trị của I là:", TinhI(X, Y))
+    # !c chia theo lưới phủ
+    c=2
+    MocSaiSo = ChonMocDanhGiaSaiSo(X,Y,c)
+    XSaiSo = []
+    YSaiSo = []
+    for i in range(len(MocSaiSo[0])):
+        XSaiSo.append(MocSaiSo[0][i])
+        YSaiSo.append(MocSaiSo[1][i])
+
+    I_h = TinhI(X, Y,m)
+    I_hTrenC = TinhI(XSaiSo, YSaiSo,m)
     print(HeSoCoTet(m))
-    print(TinhI(X, Y, m))
+    print("Giá trị của I là:",I_h)
+    print("Giá trị của I_hTrenC là:", I_hTrenC)
+    print(f"Giá trị của |I_h - I_h/{c}| = {(I_h-I_hTrenC)*4/3}")

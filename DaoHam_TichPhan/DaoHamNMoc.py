@@ -1,4 +1,4 @@
-from Hoocner import Hoocner
+import Hoocner
 import numpy
 import sympy
 
@@ -37,10 +37,11 @@ def DaoHamPt(X, Y, c):
 
 
 if __name__ == "__main__":
+    #! Đọc từ fire input
     X = []
     Y = []
 
-    with open(r"input.txt", "r") as file:
+    with open("inputDaoHam.txt", "r") as file:
         for line in file:
             data = line.strip().split(" ")
             X.append(float(data[0]))
@@ -51,6 +52,8 @@ if __name__ == "__main__":
         bangNoiSuy[i][0] = X[i]
         bangNoiSuy[i][1] = Y[i]
     print(bangNoiSuy)
+
+    # !Đọc từ hàm 
     # X = [50, 55, 60, 65]
     # Y = []
 
@@ -59,6 +62,8 @@ if __name__ == "__main__":
     # for i in range(len(X)):
     #     Y.append(bangNoiSuy[i][1])
     # print(BangNoiSuy(f, X))
+
+
     c = X[1]
     Pt = TinhPt(X, Y)
     P_t = 0
