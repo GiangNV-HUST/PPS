@@ -21,6 +21,6 @@ if __name__ == "__main__":
     HeSoDaThuc = NiuTon_Tien.HESODATHUC(X, HeSoNiuTon)
     print("Hệ số của đa thức là:\n", HeSoDaThuc)
 
-    x = 3.15
+    x = 13.5
     print(f"Giá trị của hàm số tại x = {x} là: ",
           NiuTon_Tien.GIATRIHAMSOTAIX(HeSoDaThuc, x))

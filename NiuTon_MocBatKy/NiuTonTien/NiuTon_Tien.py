@@ -22,7 +22,7 @@ def TISAIPHANCAPN(X, Y):
 def HESONIUTON(X, Y):
     HeSoNiuTon = np.zeros(len(X))
     TiSaiPhanCapN = TISAIPHANCAPN(X, Y)
-    HeSoNiuTon[0] = Y[len(Y)-1]
+    HeSoNiuTon[0] = Y[0]
     n = len(X)
     for i in range(1, n):
         HeSoNiuTon[i] = TiSaiPhanCapN[i-1, 0]

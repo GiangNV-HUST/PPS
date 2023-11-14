@@ -36,6 +36,7 @@ def HESODATHUC(X, HeSoNiuTon):
     BangWx = np.zeros((len(X), len(X)))
     BangWx[0, n-1] = HeSoNiuTon[0]
     HeSoDaThuc = np.zeros(len(X))
+    X.reverse()
     for i in range(1, len(X)):
         line = HeSoNiuTon[i]*np.array(Hoocner.TinhWx(X[0:i]))
         line = line[::-1]
@@ -74,6 +75,6 @@ if __name__ == "__main__":
     HeSoDaThuc = HESODATHUC(X, HeSoNiuTon)
     print("Hệ số của đa thức là: \n", HeSoDaThuc)
 
-    # x = 4.27
-    # print(f"Giá trị của hàm số tại x = {x} là: ",
-    #       GIATRIHAMSOTAIX(HeSoDaThuc, x))
+    x = 13.5
+    print(f"Giá trị của hàm số tại x = {x} là: ",
+          GIATRIHAMSOTAIX(HeSoDaThuc, x))
