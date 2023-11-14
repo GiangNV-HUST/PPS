@@ -57,27 +57,3 @@ def GIATRIHAMSOTAIX(HeSoDaThuc, x):
     return GiaTriHam
 
 
-if __name__ == "__main__":
-    X = []
-    Y = []
-    with open("input.txt", "r") as file:
-        for line in file:
-            data = line.strip().split()
-            X.append(float(data[0]))
-            Y.append(float(data[1]))
-
-    TiSaiPhanCapN = TISAIPHANCAPN(X, Y)
-    # Bảng tỉ sai phân có các hàng tương ứng với6 các cấp
-    print("Bảng tỉ sai phân cấp n của đa thức:\n", TiSaiPhanCapN)
-
-    HeSoNiuTon = HESONIUTON(X, Y)
-    # Hệ số tỉ sai phân bắt đầu từ cấp 0 đến n
-    print("Hệ số NiuTon của đa thức\n", HeSoNiuTon)
-
-    # Đa thức có dạng F(x) =  a_n*x^n+ ...+ a_0*x^0
-    HeSoDaThuc = HESODATHUC(X, HeSoNiuTon)
-    print("Hệ số của đa thức là: \n", HeSoDaThuc)
-
-    x = 4.27
-    print(f"Giá trị của hàm số tại x = {x} là: ",
-          GIATRIHAMSOTAIX(HeSoDaThuc, x))
